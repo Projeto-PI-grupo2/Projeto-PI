@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro!</title>
+</head>
+<body>
+    <div style= "text-align: center;">
+    <img  src="aaa.png"  width="400px" height="180px">
+    <br>
+    <h2><b style="color: darkblue;">Simulador Financeiro</b></h2> 
+    </div>
+
+    <div style= "text-align: center;" id="vaisumir" >
+    <br>
+    <br>
+    <div>Bem vindo ao Simulador Financeiro.<br>
+         Aqui você colocara seus dados atuais e será surpreendido pelo upgrade
+        que seu comercio fará após utilizar os serviços da <b>FLOW</b>!
+    </div>
+    <br>
+    Para começar, selecione o porte de seu comercio de acordo com a quantidade de corredores!
+    <br>
+    <select id="portes"> 
+    <option value="Mais de 15 corredores">Grande porte</option>
+    <option value="9 a 15 corredores">Médio porte</option>
+    <option value="3 a 8 corredores">Pequeno porte</option>
+    </select>
+    <button  onclick ="porte()">Selecionar</button>
+    <br>
+    <div id="comercio"></div>
+    <br>
+    Agora que descobriu onde seu comercio se encaixa vamos seguir para os próxims passos:<br>
+    * OBS( Não digite nenhum tipo de pontuação (*.!/), apenas números :D)
+    <br>
+    <br>
+    <b>O seu comercio tem quantos </b><b style="color: darkblue;"> corredores? <br></b><input id="corredo">
+    <br>
+    <br>
+    <b>Digite o </b><b style="color: darkblue;">Nome da sua Empresa  <br></b><input id="nome">
+    <br>
+    <br>
+    <b>Qual o </b><b style="color: darkblue;">Lucro mensal?(milhar) <br></bnr></b><input id="lucro">
+    <br>
+    <br>
+    <b>Quanto aproximandamente o seu comercio gasta com os </b><b style="color: darkblue;"> funcionarios nas areas de vendas e caixas?(milhar)<br></b><input id="despesa"> 
+    <br>
+    <br>
+    <button style="background-color: darkblue; color: white;" onclick="calcular()">Calcular lucro previsto</button>
+    <br>
+</div>
+    <div id="oi" style="text-align: center; display: none;" >
+    <div id="espaco" ></div>
+    <button onclick="voltatudo()" style="background-color: darkblue; color: white;"> Fazer nova consulta </button>
+    </div>
+</body>
+</html>
+<script> 
+    function porte(){
+        comercio.innerHTML = `${portes.value}`
+    }   
+    function calcular(){
+        var sensor = corredo.value * Number(300) + Number (1000) ;
+        var lucrao = lucro.value * 1000;
+        var despesona = despesa.value * 1000;
+        var calculo = lucro.value * 2.8 / 100;
+        var gastos = (despesa.value * 5 / 100) * 1000;
+        var total = (Number(lucro.value) + Number (calculo)) * 1000;
+        vaisumir.style.display = 'none';
+        oi.style.display = 'block';
+        espaco.innerHTML =
+         `<h3>Hoje a sua empresa <span style = "color:red">(${nome.value})</span> fatura R$${lucrao} por mês e gasta aproximadamente R$${despesona} por mês 
+         com funcionários que não estão ativos 100% do dia ou da semana! <br>
+        Usando o nosso sistema <span style="color:darkblue">FLOW</span>, com um investimento de aproximadamento R$${sensor},
+         a sua empresa <span style="color:red">(${nome.value})</span> pode chegar a lucrar R$${total} (quase 3% a mais) , aumentar a taxa de conversão de pessoas em até 17% 
+          e ainda economisar R$${gastos} com a dispensa de funcionarios e otimização de tempo dos demais, Tudo isso em apenas 2 meses!<br>
+          Entre em contato agora mesmo e faça um orçamento!</h3>`; 
+    }
+    function voltatudo(){
+        vaisumir.style.display = 'block';
+        oi.style.display = 'none';
+    }
+
+</script>
+
+
