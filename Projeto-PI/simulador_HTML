@@ -76,7 +76,7 @@
         Usando o nosso sistema <span style="color:darkblue">FLOW</span>, com um investimento de aproximadamento R$${sensor},
          a sua empresa <span style="color:red">(${nome.value})</span> pode chegar a lucrar R$${total} (quase 3% a mais) , aumentar a taxa de conversão de pessoas em até 17% 
           e ainda economisar R$${gastos} com a dispensa de funcionarios e otimização de tempo dos demais, Tudo isso em apenas 2 meses!<br>
-          Entre em contato agora mesmo e faça um orçamento!</h3>`; 
+          Entre em contato agora mesmo e faça um orçamento!TESTE GIT</h3>`; 
     }
     function voltatudo(){
         vaisumir.style.display = 'block';
